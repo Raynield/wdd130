@@ -1,33 +1,52 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
+    margin: 0;
 }
 
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+/* Header */
 header {
     background-color: #444;
     color: white;
     text-align: center;
     padding: 12px;
-    width: 500px;
+    max-width: 500px;
     margin: 20px auto;
 }
 
+/* Main content */
 main {
-    width: 500px;
+    max-width: 500px;
     margin: 0 auto;
     text-align: center;
 }
 
 h1 {
+    color: #333;
     margin-bottom: 20px;
 }
 
-picture img {
+main img {
     width: 100%;
     height: auto;
+    border: 1px solid gray;
+    padding: 5px;
     box-shadow: 0 0 15px gray;
 }
 
+/* Sections */
 section {
     background-color: #ececec;
     text-align: left;
@@ -40,12 +59,33 @@ section h2 {
     padding-bottom: 5px;
 }
 
+/* Aside */
+aside {
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid gray;
+    padding: 15px;
+    background-color: #ececec;
+    color: #333;
+}
+
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+/* Paragraphs */
+p {
+    padding: 0;
+}
+
+/* Footer */
 footer {
     background-color: #444;
     color: white;
+    margin-top: 25px;
+    border-top: 2px solid gray;
     text-align: center;
-    width: 500px;
-    margin: 20px auto;
     padding: 10px;
 }
 
