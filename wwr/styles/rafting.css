@@ -1,14 +1,15 @@
 /* ===================================================
-   1. RESET & ROOT VARIABLES
+   1. ROOT VARIABLES & RESET
    =================================================== */
 :root {
-  --primary-color: #2b4c7e;
-  --secondary-color: #1b2a47;
-  --accent1-color: #f59e0b;
-  --accent2-color: #b45309;
-  --text-color: #1f2937;
+  --primary-color: #1b2a47;
+  --secondary-color: #2b4c7e;
+  --accent-color: #d97706;
+  --accent-hover: #b45309;
   --bg-color: #f8fafc;
-  --white: #ffffff;
+  --card-bg: #ffffff;
+  --text-color: #1f2937;
+  --border-color: #cbd5e1;
   --font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -29,42 +30,45 @@ body {
    2. HEADER & NAVIGATION
    =================================================== */
 header {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
 }
 
 header img {
-  height: 60px;
+  height: 55px;
   width: auto;
 }
 
 nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 nav a {
-  color: var(--white);
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
-  color: var(--accent1-color);
+  color: #f59e0b;
 }
 
 /* ===================================================
-   3. GLOBAL MAIN CONTAINER & ELEMENTS
+   3. MAIN CONTAINER & CALL TO ACTIONS
    =================================================== */
 main {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 img {
@@ -75,139 +79,172 @@ img {
 
 h1, h2, h3 {
   color: var(--primary-color);
-  margin-bottom: 0.75rem;
 }
 
 /* General Buttons */
 .btn, button, input[type="submit"] {
-  display: inline-block;
-  background-color: var(--accent1-color);
-  color: var(--secondary-color);
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
+  background-color: var(--accent-color);
+  color: #ffffff;
   border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  text-align: center;
-  transition: opacity 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease;
 }
 
 .btn:hover, button:hover, input[type="submit"]:hover {
-  opacity: 0.9;
+  background-color: var(--accent-hover);
 }
 
-/* Call to Action Bar (Hero / Middle Banners) */
-.cta-banner, .action-box {
-  background-color: var(--secondary-color);
-  color: var(--white);
+/* Call to Action Banner Blocks */
+div:has(> .btn), section:has(> .btn):not(.contact-form-section) {
+  background-color: var(--primary-color);
+  color: #ffffff;
   text-align: center;
-  padding: 2rem 1.5rem;
-  border-radius: 6px;
-  margin: 1.5rem 0;
+  padding: 2.5rem 1.5rem;
+  border-radius: 8px;
 }
 
-.cta-banner h2, .action-box h2 {
-  color: var(--white);
+div:has(> .btn) h2, section:has(> .btn) h2 {
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
-.cta-banner p, .action-box p {
+/* ===================================================
+   4. CARDS & AUTOMATIC GRIDS (HOME & TRIPS PAGES)
+   =================================================== */
+
+/* Multi-column grid layout for sections containing articles/divs */
+main section:not(.company-info):not(.map-form-container):not(.team-section) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Card layout formatting */
+article, section:not(.company-info):not(.map-form-container):not(.team-section) > div {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+article img, section > div > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
   margin-bottom: 1rem;
 }
 
+/* Fieldsets & Forms (Newsletter Section) */
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.2rem;
+  background-color: var(--card-bg);
+}
+
+legend {
+  font-weight: bold;
+  color: var(--primary-color);
+  padding: 0 0.5rem;
+}
+
 /* ===================================================
-   4. CARD GRIDS (HOME & TRIPS PAGES)
+   5. CONTACT PAGE LAYOUT
    =================================================== */
-
-/* Grid de 2 Columnas para Home (Our Mission & Why Choose Us) */
-.home-grid, .two-column-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
+.company-info {
+  text-align: center;
 }
 
-/* Grid de 3 Columnas para Trips */
-.trips-grid, .three-column-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin: 1.5rem 0;
+.map-form-container {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2rem !important;
+  align-items: start;
 }
 
-/* Estilo unificado para Tarjetas (Home y Trips) */
-.card, .trip-card, .home-grid article, .trips-grid article {
-  background-color: var(--white);
-  border: 1px solid #e2e8f0;
+.map-section iframe {
+  width: 100%;
+  height: 480px;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.card img, .trip-card img, .home-grid img, .trips-grid img {
+.contact-form-section form {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form-section label {
+  display: block;
+  margin: 0.4rem 0 0.2rem;
+  font-weight: bold;
+}
+
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.team-section {
+  text-align: center;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+}
+
+.team-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.team-grid img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: 0.75rem;
-}
-
-/* Newsletter Box (Home) */
-.newsletter-section, .newsletter-box {
-  background-color: var(--white);
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.newsletter-section fieldset {
-  border: 1px solid #cbd5e1;
-  padding: 1rem;
-  border-radius: 6px;
-}
-
-.newsletter-section legend {
-  padding: 0 0.5rem;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.newsletter-section label {
-  display: block;
-  margin: 0.5rem 0 0.2rem;
-  font-weight: 600;
-}
-
-.newsletter-section input[type="text"],
-.newsletter-section input[type="email"] {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-  margin-bottom: 0.75rem;
 }
 
 /* ===================================================
-   5. TABLE STYLES (TRIPS PAGE)
+   6. TABLES (TRIPS PAGE)
    =================================================== */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
-  background-color: var(--white);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 th, td {
-  padding: 0.75rem 1rem;
+  padding: 0.9rem 1rem;
   text-align: left;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 th {
-  background-color: var(--secondary-color);
-  color: var(--white);
+  background-color: var(--primary-color);
+  color: #ffffff;
 }
 
 tr:nth-child(even) {
@@ -215,99 +252,16 @@ tr:nth-child(even) {
 }
 
 /* ===================================================
-   6. CONTACT PAGE SPECIFIC STYLES
-   =================================================== */
-.company-info {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.map-form-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-  margin-bottom: 2.5rem;
-}
-
-.map-section iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 440px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-}
-
-.contact-form-section form {
-  background-color: var(--white);
-  padding: 1.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form-section fieldset {
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  padding: 0.8rem;
-}
-
-.contact-form-section legend {
-  font-weight: bold;
-  color: var(--primary-color);
-  padding: 0 0.5rem;
-}
-
-.contact-form-section label {
-  display: block;
-  margin: 0.4rem 0 0.2rem;
-  font-weight: 600;
-}
-
-.contact-form-section input[type="text"],
-.contact-form-section input[type="email"],
-.contact-form-section textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-}
-
-.team-section {
-  text-align: center;
-  border: 1px solid #cbd5e1;
-  background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.team-grid img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* ===================================================
    7. FOOTER
    =================================================== */
 footer {
-  background-color: var(--secondary-color);
-  color: var(--white);
+  background-color: var(--primary-color);
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
-  margin-top: 2rem;
+  padding: 1.2rem 3rem;
+  margin-top: 3rem;
 }
 
 footer .socialmedia {
@@ -316,12 +270,12 @@ footer .socialmedia {
 }
 
 footer .socialmedia img {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 /* ===================================================
-   8. RESPONSIVE DESIGN (DISPOSITIVOS MÓVILES)
+   8. MEDIA QUERIES (MOBILE RESPONSIVENESS)
    =================================================== */
 @media (max-width: 768px) {
   header, footer {
@@ -330,10 +284,7 @@ footer .socialmedia img {
     text-align: center;
   }
 
-  .home-grid, 
-  .trips-grid, 
-  .map-form-container, 
-  .team-grid {
-    grid-template-columns: 1fr;
+  .map-form-container, .team-grid {
+    grid-template-columns: 1fr !important;
   }
 }
