@@ -1,16 +1,14 @@
 /* ===================================================
-   1. VARIABLES & GENERAL RESET
+   1. VARIABLES & BASE STYLES
    =================================================== */
 :root {
-  --primary-color: #1b365d;
-  --secondary-color: #002244;
+  --primary-color: #0d233a;
+  --secondary-color: #1b4965;
   --accent-color: #d97706;
-  --accent-hover: #b45309;
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --text-color: #1e293b;
-  --border-color: #cbd5e1;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -31,37 +29,33 @@ body {
    =================================================== */
 header {
   background-color: var(--primary-color);
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-header img {
-  height: 60px;
+header .logo {
+  height: 65px;
   width: auto;
-  border-radius: 50%;
-  background-color: #ffffff;
-  padding: 3px;
 }
 
 nav {
   display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 nav a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  transition: color 0.2s;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
 nav a:hover {
+  background-color: var(--secondary-color);
   color: #fde047;
 }
 
@@ -69,56 +63,48 @@ nav a:hover {
    3. MAIN CONTAINER
    =================================================== */
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-h1, h2, h3 {
+h1, h2 {
   color: var(--primary-color);
-  font-weight: 700;
+  text-align: center;
 }
 
 /* ===================================================
-   4. HERO BANNER
+   4. HERO SECTION (ABOUT PAGE)
    =================================================== */
 .hero {
   position: relative;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  background-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .hero > img {
   width: 100%;
-  height: 380px;
+  height: 400px;
   object-fit: cover;
+  display: block;
 }
 
 .hero h1 {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(27, 54, 93, 0.85);
+  background-color: rgba(13, 35, 58, 0.85);
   color: #ffffff;
-  padding: 0.6rem 2rem;
-  font-size: 1.8rem;
-  text-align: center;
-  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  font-size: 2rem;
   width: 80%;
-  backdrop-filter: blur(4px);
+  border-radius: 6px;
 }
 
 .hero article {
@@ -126,78 +112,66 @@ h1, h2, h3 {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1rem 1.5rem;
   width: 85%;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 6px;
 }
 
 .hero article img {
-  width: 120px;
-  height: 80px;
+  width: 130px;
+  height: 90px;
   object-fit: cover;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.hero article h2 {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  margin-bottom: 0.3rem;
+  border-radius: 4px;
 }
 
 .hero article p {
-  font-size: 0.9rem;
-  color: #475569;
+  color: #334155;
+  font-size: 0.95rem;
 }
 
 /* ===================================================
-   5. HISTORY SECTION
+   5. HISTORY SECTION (3 Columns)
    =================================================== */
 .history-section {
   background-color: var(--card-bg);
   padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
 }
 
 .history-section h2 {
-  text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.history-content {
+.history-grid {
   display: grid;
-  grid-template-columns: 1fr 280px 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr 300px 1fr;
+  gap: 2rem;
   align-items: center;
 }
 
-.history-content img {
+.history-grid img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 /* ===================================================
-   6. ADVENTURES GALLERY (5 Columns Horizontal)
+   6. ADVENTURES SECTION (5 Horizontal Columns)
    =================================================== */
 .adventures-section {
   background-color: var(--card-bg);
   padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
 }
 
 .adventures-section h2 {
-  text-align: center;
   margin-bottom: 1.5rem;
 }
 
@@ -208,9 +182,9 @@ h1, h2, h3 {
 }
 
 .adventures-grid figure {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
   padding: 0.5rem;
   text-align: center;
 }
@@ -219,18 +193,18 @@ h1, h2, h3 {
   width: 100%;
   height: 120px;
   object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
+  border-radius: 4px;
 }
 
 .adventures-grid figcaption {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: bold;
+  margin-top: 0.5rem;
   color: var(--primary-color);
 }
 
 /* ===================================================
-   7. FOOTER & SOCIAL MEDIA ICONS
+   7. FOOTER
    =================================================== */
 footer {
   background-color: var(--primary-color);
@@ -244,36 +218,38 @@ footer {
 
 footer .socialmedia {
   display: flex;
-  gap: 1.2rem;
-  align-items: center;
+  gap: 1rem;
 }
 
 footer .socialmedia a img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
+  width: 30px;
+  height: 30px;
 }
 
 /* ===================================================
-   8. RESPONSIVE DESIGN
+   8. RESPONSIVE DESIGN (Móviles)
    =================================================== */
 @media (max-width: 768px) {
-  .history-content, .adventures-grid {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .history-grid, .adventures-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero h1 {
     font-size: 1.2rem;
     position: static;
     transform: none;
     width: 100%;
-    border-radius: 0;
   }
 
   .hero article {
     position: static;
     transform: none;
     width: 100%;
-    border-radius: 0;
+    flex-direction: column;
   }
 }
