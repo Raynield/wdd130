@@ -26,7 +26,7 @@ body {
 }
 
 /* ===================================================
-   HEADER & NAVIGATION (UNIFORM ACROSS ALL PAGES)
+   HEADER & NAVIGATION
    =================================================== */
 header {
   background-color: var(--secondary-color);
@@ -59,7 +59,7 @@ nav a:hover {
 }
 
 /* ===================================================
-   FOOTER (UNIFORM ACROSS ALL PAGES)
+   FOOTER
    =================================================== */
 footer {
   background-color: var(--secondary-color);
@@ -91,7 +91,7 @@ footer .socialmedia img:hover {
 }
 
 /* ===================================================
-   GLOBAL BUTTONS & COMMON COMPONENTS
+   GLOBAL BUTTONS
    =================================================== */
 .btn {
   display: inline-block;
@@ -112,7 +112,7 @@ footer .socialmedia img:hover {
 }
 
 /* ===================================================
-   CONTACT US PAGE - STRICT WIREFRAME W05 ALIGNMENT
+   CONTACT US PAGE - WIREFRAME ACCURATE GRID LAYOUT
    =================================================== */
 
 .contact-main {
@@ -124,7 +124,7 @@ footer .socialmedia img:hover {
 /* 1. Centered Company Info (Top Box of Wireframe) */
 .company-info {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .company-info h1 {
@@ -134,12 +134,12 @@ footer .socialmedia img:hover {
 }
 
 .company-info p {
-  margin: 0.25rem 0;
+  margin: 0.2rem 0;
   color: var(--text-color);
   font-size: 1.1rem;
 }
 
-/* 2. Map and Form Container (2-Column Grid in Center of Wireframe) */
+/* 2. Map (Left) + Form (Right) Side-by-Side Container */
 .map-form-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -148,14 +148,24 @@ footer .socialmedia img:hover {
   margin-bottom: 3rem;
 }
 
-.map-section iframe {
+/* Map Section Fixes */
+.map-section {
   width: 100%;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  min-height: 480px;
 }
 
-/* Form Styling */
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* Contact Form Section Fixes */
+.contact-form-section {
+  width: 100%;
+}
+
 .contact-form-section form {
   background-color: var(--white);
   padding: 1.5rem;
