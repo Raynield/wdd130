@@ -1,26 +1,15 @@
-/* --- Root Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
-    --primary-color: #0d47a1;
-    --secondary-color: #ffb300;
-    --accent1-color: #0288d1;
-    --accent1-hover-color: #01579b;
-    --accent2-color: #ffa000;
-    
-    /* Standardized Neutral Colors */
-    --text-dark: #333333;
-    --text-darker: #222222;
-    --text-black: #000000;
-    --bg-light: #f8f9fa;
-    --bg-white: #ffffff;
-    --border-light: #dddddd;
-    --border-input: #cccccc;
-    
-    /* Fonts */
-    --heading-font: Arial, sans-serif;
-    --paragraph-font: Helvetica, sans-serif;
+    --primary-color: #2b4c7e;
+    --secondary-color: #1b2a47;
+    --accent1-color: #d9e2ec;
+    --accent2-color: #d97706;
+    --text-color: #1f2937;
+    --bg-color: #f8fafc;
+    --white: #ffffff;
 }
 
-/* --- Global Reset & Layout --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,74 +17,78 @@
 }
 
 body {
-    font-family: var(--paragraph-font);
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 10px;
 }
 
-/* --- Header & Navigation --- */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--primary-color);
-    padding: 10px 20px;
-}
-
-.logo-box img {
+header img {
     height: 70px;
     width: auto;
-    display: block;
 }
 
 nav {
     display: flex;
-    gap: 15px;
+    gap: 1.5rem;
 }
 
 nav a {
-    color: var(--bg-white);
+    color: var(--white);
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 12px;
-    transition: background-color 0.3s;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem 0.8rem;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--accent1-hover-color);
-    border-radius: 4px;
+    color: var(--accent2-color);
 }
 
-/* --- Hero Section --- */
+/* Main Container */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Hero Section */
 .hero {
     position: relative;
-    width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .hero img {
     width: 100%;
-    height: 450px;
+    height: 400px;
     object-fit: cover;
     display: block;
 }
 
 .hero h1 {
     position: absolute;
-    top: 25%;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 15px 30px;
-    border-radius: 6px;
+    transform: translateX(-50%);
+    background-color: rgba(43, 76, 126, 0.85);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    font-size: 2.2rem;
     text-align: center;
     width: 80%;
-    font-size: 2rem;
+    border-radius: 4px;
 }
 
 .hero article {
@@ -103,195 +96,405 @@ nav a:hover {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--bg-white);
-    padding: 15px;
-    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.95);
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1rem;
+    padding: 1rem;
     width: 85%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero article img {
     width: 100px;
-    height: 80px;
+    height: 70px;
     object-fit: cover;
-    border-radius: 4px;
 }
 
-.hero article p {
-    color: var(--text-darker);
-    font-size: 0.95rem;
+/* Common Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--accent2-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* --- CSS Grid Layouts (Home & Trips) --- */
-.home-grid, .trip-details-grid {
+.btn:hover {
+    background-color: #b45309;
+}
+
+/* Home Page Layout */
+.home-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin: 30px 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-.offerings-card, .trip-card {
-    background-color: var(--bg-white);
-    padding: 20px;
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--accent1-color);
     border-radius: 8px;
-    border: 1px solid var(--border-light);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.offerings-card img, .trip-card img {
+.card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.offerings-card h2, .trip-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-/* --- Call to Action Banners --- */
-.cta-section, .trip-cta-banner {
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    text-align: center;
-    padding: 35px 20px;
-    border-radius: 8px;
-    margin: 30px 0;
-}
-
-.cta-section p, .trip-cta-banner p {
-    margin: 10px 0 20px;
-    font-size: 1.1rem;
-}
-
-.cta-button, .submit-btn {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--text-black);
-    padding: 12px 26px;
-    text-decoration: none;
-    font-weight: bold;
     border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    margin-bottom: 1rem;
 }
 
-.cta-button:hover, .submit-btn:hover {
-    background-color: var(--accent2-color);
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
 }
 
-/* --- Form Styles --- */
-.newsletter, .form-section {
-    background-color: var(--bg-white);
-    padding: 30px;
+.home-cta {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 1.5rem;
     border-radius: 8px;
-    border: 1px solid var(--border-light);
-    margin: 30px 0;
+    margin-bottom: 2rem;
 }
 
-.newsletter h2, .form-section h2 {
+.home-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.home-cta p {
+    margin-bottom: 1.5rem;
+}
+
+/* Forms (Newsletter & Contact) */
+.newsletter-section, .contact-form-section {
+    background-color: var(--white);
+    border: 1px solid var(--accent1-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.newsletter-section h2, .contact-form-section h2 {
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
-.newsletter fieldset, .form-section fieldset {
-    border: 2px solid var(--primary-color);
-    padding: 20px;
+fieldset {
+    border: 1px solid var(--primary-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     border-radius: 6px;
-    margin-bottom: 20px;
 }
 
-.newsletter legend, .form-section legend {
-    font-weight: bold;
+legend {
     color: var(--primary-color);
-    padding: 0 10px;
+    font-weight: bold;
+    padding: 0 0.5rem;
 }
 
 .form-item {
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .form-item label {
-    display: block;
-    margin-bottom: 5px;
     font-weight: bold;
+    margin-bottom: 0.3rem;
 }
 
-.form-item input[type="text"],
-.form-item input[type="email"],
-.form-item textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--border-input);
+.form-item input, .form-item textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1rem;
 }
 
-/* --- Trips Page Header & Table --- */
-.trips-header {
+.radio-group, .checkbox-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.radio-group label, .checkbox-item label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* About Page Styles */
+.about-history {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.about-history h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.history-image-wrapper {
+    margin-top: 1rem;
     text-align: center;
-    margin: 30px 0 15px;
 }
 
-.trips-header h1 {
+.history-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-gallery {
+    margin-bottom: 2rem;
+}
+
+.about-gallery h2 {
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.trips-table-section {
-    margin: 40px 0;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
 }
 
-.trips-table-section h2 {
+.gallery-grid figure {
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.gallery-grid figcaption {
+    padding: 0.6rem;
+    font-weight: bold;
     color: var(--primary-color);
-    margin-bottom: 15px;
+}
+
+/* Trips Page Styles */
+.trips-hero-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.trips-hero-intro h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.trips-cta {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+}
+
+.trips-cta h2 {
+    margin-bottom: 0.5rem;
+}
+
+.trips-cta p {
+    margin-bottom: 1rem;
+}
+
+.trip-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.trip-card {
+    background: var(--white);
+    border: 1px solid var(--accent1-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.trip-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.trip-card p {
+    margin-bottom: 0.8rem;
+}
+
+.trip-table-section {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.trip-table-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .trips-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--bg-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .trips-table th, .trips-table td {
-    padding: 12px 15px;
+    padding: 0.8rem 1rem;
     text-align: left;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .trips-table th {
     background-color: var(--primary-color);
-    color: var(--bg-white);
+    color: var(--white);
 }
 
-.trips-table tr:hover {
-    background-color: var(--bg-light);
+.trips-table tr:nth-child(even) {
+    background-color: var(--bg-color);
 }
 
-/* --- Footer --- */
+/* Contact Page Wireframe Fixes (Side-by-side & 3 Columns) */
+.contact-main h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.company-map-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--accent1-color);
+}
+
+.company-info h2, .map-section h2, .team-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 6px;
+}
+
+.team-section {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--accent1-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.team-grid figure {
+    text-align: center;
+}
+
+.team-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.team-grid figcaption {
+    font-size: 0.95rem;
+}
+
+/* Footer */
 footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    padding: 15px 20px;
-    margin-top: 40px;
+    padding: 1.2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .socialmedia {
     display: flex;
-    gap: 12px;
+    gap: 1rem;
 }
 
 .socialmedia img {
-    width: 28px;
-    height: 28px;
-    display: block;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        width: 95%;
+    }
+
+    .hero article {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .company-map-wrapper, .team-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Rocky Mountain Whitewater Rafting. Experience the best whitewater rafting adventures, family trips, and extreme river expeditions. Book your trip today!">
-    <title>Home | Rocky Mountain Whitewater Rafting</title>
+    <title>Rocky Mountain Whitewater Rafting | Home</title>
+    <meta name="description" content="Welcome to Rocky Mountain Whitewater Rafting. Book your ultimate river adventure, explore trip options, and join our newsletter today.">
+    <meta name="author" content="Rayniel Elias Druyard Rojas">
     <link rel="stylesheet" href="styles/rafting.css">
 </head>
-
 <body>
     <header>
-        <div class="logo-box">
-            <img src="images/logo.png" alt="Rocky Mountain Whitewater Rafting Logo">
-        </div>
+        <img src="images/logo.png" alt="Rocky Mountain Whitewater Rafting Logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
@@ -23,66 +20,63 @@
     </header>
 
     <main>
-        <!-- Hero Section with Absolute Positioned Title and Floating Article -->
-        <section class="hero">
-            <img src="images/hero.jpg" alt="Whitewater Rafting Adventure in Rapids">
+        <div class="hero">
+            <img src="images/hero.jpg" alt="Whitewater rafting adventure team braving river rapids">
             <h1>Experience the Adventure</h1>
             <article>
-             <img src="images/rafting1.jpg" alt="Rafting team conquering rapids">
-             <h2>Plan Your Expedition</h2>
-             <p>Join us for unforgettable whitewater rafting trips that combine breathtaking mountain scenery with heart-pounding rapids. Your safe and thrilling journey starts here!</p>
-           </article>
-        </section>
+                <img src="images/rafting1.jpg" alt="Small raft thumbnail">
+                <div class="article-content">
+                    <h2>Plan Your Expedition</h2>
+                    <p>Join us for unforgettable whitewater rafting trips that combine breathtaking mountain scenery with heart-pounding rapids. Your safe and thrilling journey starts here!</p>
+                </div>
+            </article>
+        </div>
 
-        <!-- CSS Grid Section for Purpose and Offerings with Images -->
         <section class="home-grid">
-            <div class="offerings-card">
-                <img src="images/rafting2.jpg" alt="Team navigating through canyon river rapids">
-                <h2>Our Mission &amp; Purpose</h2>
+            <div class="card">
+                <img src="images/rafting2.jpg" alt="Scenic river surrounded by pine trees">
+                <h2>Our Mission & Purpose</h2>
                 <p>At Rocky Mountain Whitewater Rafting, we are dedicated to providing safe, environmentally conscious, and deeply thrilling river experiences. We believe that conquering river obstacles builds teamwork, creates lasting memories, and fosters a deep respect for nature.</p>
             </div>
-            <div class="offerings-card">
-                <img src="images/rafting3.jpg" alt="Professional rafting guide with team on river">
+            <div class="card">
+                <img src="images/rafting3.jpg" alt="Rafting team navigating intense rapids together">
                 <h2>Why Choose Us?</h2>
                 <p>Our certified professional guides prioritize your safety while ensuring maximum fun. Equipped with top-tier gear and extensive local knowledge, we tailor every trip to match your skill level and sense of adventure.</p>
             </div>
         </section>
 
-        <!-- Call to Action (CTA) to trips.html -->
-        <section class="cta-section">
+        <section class="home-cta">
             <h2>Ready to Hit the Rapids?</h2>
             <p>Explore our wide range of guided river adventures tailored for families, thrill-seekers, and explorers.</p>
-            <a href="trips.html" class="cta-button">View Available Trips</a>
+            <a href="trips.html" class="btn">View Available Trips</a>
         </section>
 
-        <!-- Newsletter Sign Up Form -->
-        <section class="newsletter">
+        <section class="newsletter-section">
             <h2>Sign Up for Our Newsletter</h2>
-            <form action="#" method="post">
+            <form class="newsletter-form">
                 <fieldset>
                     <legend>Stay Connected With Our Latest Adventures</legend>
                     <div class="form-item">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                        <label for="user-name">Name:</label>
+                        <input type="text" id="user-name" name="user-name" placeholder="Your Full Name" required>
                     </div>
                     <div class="form-item">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        <label for="user-email">Email:</label>
+                        <input type="email" id="user-email" name="user-email" placeholder="your.email@example.com" required>
                     </div>
-                    <button type="submit" class="submit-btn">Subscribe Now</button>
+                    <button type="submit" class="btn">Subscribe Now</button>
                 </fieldset>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 | Rocky Mountain Whitewater Rafting | Rayniel Elias Druyard Rojas</p>
-        <div class="socialmedia">
-            <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook Icon"></a>
-            <a href="https://twitter.com" target="_blank"><img src="images/x.png" alt="X Icon"></a>
-            <a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram Icon"></a>
-        </div>
+        <p>© 2026 🌊 Rocky Mountain Whitewater Rafting 🌊 Rayniel Elias Druyard Rojas</p>
+        <nav class="socialmedia">
+            <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Visit our Facebook page"></a>
+            <a href="https://x.com" target="_blank"><img src="images/x.png" alt="Follow us on X"></a>
+            <a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Follow us on Instagram"></a>
+        </nav>
     </footer>
 </body>
-
 </html>
