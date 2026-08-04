@@ -53,9 +53,15 @@
         <div class="form-item radio-group">
           <label>Message Purpose</label>
           <div class="radio-options">
-            <label><input type="radio" name="purpose" value="general" checked> General Inquiry</label>
-            <label><input type="radio" name="purpose" value="reservation"> Reservation Question</label>
-            <label><input type="radio" name="purpose" value="suggestion"> Website Suggestion</label>
+            <label for="purpose-general">
+              <input type="radio" id="purpose-general" name="purpose" value="general" checked> General Inquiry
+            </label>
+            <label for="purpose-reservation">
+              <input type="radio" id="purpose-reservation" name="purpose" value="reservation"> Reservation Question
+            </label>
+            <label for="purpose-suggestion">
+              <input type="radio" id="purpose-suggestion" name="purpose" value="suggestion"> Website Suggestion
+            </label>
           </div>
         </div>
 
@@ -65,8 +71,8 @@
         </div>
 
         <div class="form-item checkbox-item">
-          <label>
-            <input type="checkbox" name="subscribe" value="yes"> Please Subscribe me to the monthly newsletter
+          <label for="subscribe">
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes"> Please Subscribe me to the monthly newsletter
           </label>
         </div>
 
