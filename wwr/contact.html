@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Rocky Mountain Whitewater Rafting</title>
-  <meta name="description" content="Contact Rocky Mountain Whitewater Rafting. Find our address, phone number, email, interactive map, meet our staff, or send us a message.">
+  <title>Contact Us | Rocky Mountain Whitewater Rafting</title>
+  <meta name="description" content="Contact Rocky Mountain Whitewater Rafting for inquiries, reservations, or customer support.">
   <meta name="author" content="Rayniel Elias Druyard Rojas">
   <link rel="stylesheet" href="styles/rafting.css">
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Rocky Mountain Whitewater Rafting Logo">
+    <img src="images/logo.png" alt="Rocky Mountain Whitewater Rafting Logo" class="logo">
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
@@ -20,90 +20,92 @@
   </header>
 
   <main class="contact-main">
-    <!-- 1. Información de la empresa -->
+    <!-- ENCABEZADO CON INFORMACIÓN DE CONTACTO -->
     <section class="company-info">
-      <h1>Rocky Mountain Whitewater Rafting</h1>
-      <p class="company-address">123 Rapids Way, Rivertown, CO 80401</p>
-      <p class="company-phone">+1 (555) 123-4567</p>
-      <p class="company-email">info@rockymtnrafting.com</p>
+      <h1>White Water Rafting Company</h1>
+      <p>123 Main River Street</p>
+      <p>Kolob, California</p>
+      <p>+1 999 999 9999</p>
+      <p>info@whitewater.com</p>
     </section>
 
-    <!-- 2. Contenedor Grid (Mapa + Formulario) -->
-    <div class="map-form-container">
-      <div class="map-section">
-        <!-- width corregido a valor numérico nativo (el CSS se encarga del 100% responsive) -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.182415104868!2d-105.22384742358872!3d39.7579606715534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b803621495e8b%3A0xb7db3537a119ae4c!2sGolden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="600" height="450" loading="lazy" title="Google Map of Rocky Mountain Whitewater Rafting Location"></iframe>
+    <!-- SECCIÓN DE MAPA + FORMULARIO EN 2 COLUMNAS -->
+    <section class="contact-container">
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.83543450937!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1633000000000!5m2!1sen!2sus" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
       </div>
 
-      <div class="contact-form-section">
-        <form action="#" method="post">
-          <fieldset>
-            <legend>Contact Information</legend>
-            <label for="username">Your Name:</label>
-            <input type="text" id="username" name="username" required placeholder="Placeholder">
+      <form class="contact-form">
+        <div class="form-item">
+          <label for="username">Name</label>
+          <input type="text" id="username" name="username" placeholder="Your Name" required>
+        </div>
 
-            <label for="useremail">Your Email Address:</label>
-            <input type="email" id="useremail" name="useremail" required placeholder="Placeholder">
-          </fieldset>
+        <div class="form-item">
+          <label for="useremail">Email</label>
+          <input type="email" id="useremail" name="useremail" placeholder="Your Email" required>
+        </div>
 
-          <fieldset>
-            <legend>Purpose of Message</legend>
-            <div class="radio-option">
-              <input type="radio" id="general" name="purpose" value="general" checked>
-              <label for="general">General Inquiry</label>
-            </div>
-            <div class="radio-option">
-              <input type="radio" id="reservation" name="purpose" value="reservation">
-              <label for="reservation">Reservation Question</label>
-            </div>
-            <div class="radio-option">
-              <input type="radio" id="suggestion" name="purpose" value="suggestion">
-              <label for="suggestion">Website Suggestion</label>
-            </div>
-          </fieldset>
+        <div class="form-item radio-group">
+          <label>Message Purpose</label>
+          <div class="radio-options">
+            <label><input type="radio" name="purpose" value="general" checked> General Inquiry</label>
+            <label><input type="radio" name="purpose" value="reservation"> Reservation Question</label>
+            <label><input type="radio" name="purpose" value="suggestion"> Website Suggestion</label>
+          </div>
+        </div>
 
-          <fieldset>
-            <legend>Your Message</legend>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Type here"></textarea>
+        <div class="form-item">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Type here..."></textarea>
+        </div>
 
-            <div class="checkbox-option">
-              <input type="checkbox" id="subscribe" name="subscribe" value="yes">
-              <label for="subscribe">Please subscribe me to the monthly newsletter</label>
-            </div>
-          </fieldset>
+        <div class="form-item checkbox-item">
+          <label>
+            <input type="checkbox" name="subscribe" value="yes"> Please Subscribe me to the monthly newsletter
+          </label>
+        </div>
 
-          <button type="submit" class="btn">Get in Touch!</button>
-        </form>
-      </div>
-    </div>
+        <button type="submit" class="submit-btn">Get in Touch!</button>
+      </form>
+    </section>
 
-    <!-- 3. Perfiles de Empleados -->
-    <section class="team-section">
+    <!-- SECCIÓN EMPLEADOS EN 3 COLUMNAS HORIZONTALES -->
+    <section class="employees-section">
       <h2>We Are Here to Serve You</h2>
-      <div class="team-grid">
+      <div class="employees-grid">
         <figure>
-          <img src="images/employee1.jpg" alt="Sarah Connor - Lead Guide">
-          <figcaption><strong>Sarah Connor</strong> - Lead Guide</figcaption>
+          <img src="images/employee1.jpg" alt="Sarah Jenkins">
+          <figcaption><strong>Sarah Jenkins</strong><br>Lead Guide</figcaption>
         </figure>
         <figure>
-          <img src="images/employee2.jpg" alt="Michael Vance - Safety Coordinator">
-          <figcaption><strong>Michael Vance</strong> - Safety Coordinator</figcaption>
+          <img src="images/employee2.jpg" alt="Michael Vance">
+          <figcaption><strong>Michael Vance</strong><br>Safety Coordinator</figcaption>
         </figure>
         <figure>
-          <img src="images/employee3.jpg" alt="Jessica Miller - Reservations Manager">
-          <figcaption><strong>Jessica Miller</strong> - Reservations Manager</figcaption>
+          <img src="images/employee3.jpg" alt="Jessica Miller">
+          <figcaption><strong>Jessica Miller</strong><br>Reservations Manager</figcaption>
         </figure>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 🌊 Rocky Mountain Whitewater Rafting 🌊 Rayniel Elias Druyard Rojas</p>
+    <p>© 2026 | Rocky Mountain Whitewater Rafting | Rayniel Elias Druyard Rojas</p>
     <nav class="socialmedia">
-      <a href="https://facebook.com"><img src="images/facebook.png" alt="Visit our Facebook page"></a>
-      <a href="https://x.com"><img src="images/x-logo.png" alt="Follow us on X"></a>
-      <a href="https://instagram.com"><img src="images/instagram.png" alt="Follow us on Instagram"></a>
+      <a href="https://facebook.com" target="_blank">
+        <img src="images/facebook.png" alt="Facebook Icon">
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <img src="images/instagram.png" alt="Instagram Icon">
+      </a>
+      <a href="https://x.com" target="_blank">
+        <img src="images/x-logo.png" alt="X / Twitter Icon">
+      </a>
     </nav>
   </footer>
 </body>
