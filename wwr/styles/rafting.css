@@ -4,7 +4,8 @@
 :root {
   --primary-color: #0d233a;
   --secondary-color: #1b4965;
-  --accent-color: #d97706;
+  --accent-color: #8b2f0a; /* Ajustado para cumplir estricto contraste WCAG AA con texto blanco */
+  --accent-hover: #6b2106;
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --text-color: #1e293b;
@@ -30,10 +31,10 @@ img {
   display: block;
 }
 
-/* GLOBAL LAYOUT REQUIREMENT (MAX 1100px CENTRADO EN PANTALLAS GRANDES) */
 header, main, footer {
   max-width: 1100px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 
@@ -73,7 +74,7 @@ nav a:hover {
 }
 
 /* ===================================================
-   3. MAIN CONTAINER & BUTTONS
+   3. MAIN & BUTTONS
    =================================================== */
 main {
   margin: 2rem auto;
@@ -103,11 +104,11 @@ h1, h2, h3 {
 }
 
 .btn:hover {
-  background-color: #b45309;
+  background-color: var(--accent-hover);
 }
 
 /* ===================================================
-   4. HERO BANNER (Common for Index & About)
+   4. HERO BANNER
    =================================================== */
 .hero {
   position: relative;
@@ -129,7 +130,7 @@ h1, h2, h3 {
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(13, 35, 58, 0.85);
+  background-color: rgba(13, 35, 58, 0.90);
   color: #ffffff;
   padding: 0.6rem 2rem;
   font-size: 1.8rem;
@@ -160,12 +161,12 @@ h1, h2, h3 {
 }
 
 .hero article p, .hero-card p, .about-hero-card p {
-  color: #334155;
+  color: #1e293b;
   font-size: 0.9rem;
 }
 
 /* ===================================================
-   5. HOME PAGE SPECIFIC STYLES (W06)
+   5. HOME PAGE STYLES (CSS GRID EXPLICITO)
    =================================================== */
 .home-grid {
   display: grid;
@@ -227,8 +228,21 @@ h1, h2, h3 {
   color: var(--primary-color);
 }
 
+.newsletter-form .form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
+  padding: 0.6rem;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+}
+
 /* ===================================================
-   6. TRIPS PAGE SPECIFIC STYLES (W06)
+   6. TRIPS PAGE STYLES
    =================================================== */
 .trips-hero-intro {
   text-align: center;
@@ -352,7 +366,7 @@ h1, h2, h3 {
 }
 
 /* ===================================================
-   8. CONTACT PAGE STYLES (W05 FIX)
+   8. CONTACT PAGE STYLES
    =================================================== */
 .company-info {
   text-align: center;
@@ -443,7 +457,7 @@ h1, h2, h3 {
 }
 
 /* ===================================================
-   9. FOOTER & SOCIAL MEDIA ICONS
+   9. FOOTER & SOCIAL MEDIA
    =================================================== */
 footer {
   background-color: var(--primary-color);
@@ -472,10 +486,10 @@ footer .socialmedia a {
 }
 
 footer .socialmedia img {
-  width: 32px !important;
-  height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
   object-fit: contain;
 }
 
